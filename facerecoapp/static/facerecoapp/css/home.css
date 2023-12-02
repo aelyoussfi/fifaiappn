@@ -1,0 +1,393 @@
+.main-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.main-content {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+.block-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;  
+    border: solid 0.5px transparent ;
+    border-radius: 5px;
+    height: 150px;
+    width: 600px;
+    background-color: transparent ;
+}
+.left{
+    width: 40%;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.right{
+    width: 40%;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+img {
+    margin-top: 20px;
+    width: 50vw;
+    border-radius: 5px;
+}
+button {
+    margin-top: 10px;
+    background-color: #1e6dbc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
+    height: 50px;
+}
+.block-optim{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.firstLign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+.firstLign p {
+    width: 18vw;
+    margin: 20px;
+    font-size: 12px;
+}
+.secondLign p {
+    width: 18vw;
+    margin: 20px;
+    font-size: 12px;
+}
+.secondLign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+/* palyers slides */
+.slideshow {
+        height: 250px;
+        width: 400px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .content {
+        margin: auto;
+        width: 170px;
+        perspective: 3000px;
+        padding-top: 80px;
+    }
+
+    .content-carrousel {
+        width: 100%;
+        float: right;
+        animation: rotar 15s infinite linear;
+        transform-style: preserve-3d;
+    }
+
+    .content-carrousel:hover {
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+
+    .content-carrousel figure {
+        width: 100%;
+        height: 120px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .content-carrousel figure:nth-child(1) {
+        transform: rotateY(0deg) translateZ(300px);
+    }
+
+    .content-carrousel figure:nth-child(2) {
+        transform: rotateY(60deg) translateZ(300px);
+    }
+
+    .content-carrousel figure:nth-child(3) {
+        transform: rotateY(120deg) translateZ(300px);
+    }
+
+    .content-carrousel figure:nth-child(4) {
+        transform: rotateY(180deg) translateZ(300px);
+    }
+
+    .content-carrousel figure:nth-child(5) {
+        transform: rotateY(240deg) translateZ(300px);
+    }
+
+    .content-carrousel figure:nth-child(6) {
+        transform: rotateY(300deg) translateZ(300px);
+    }
+
+    .content-carrousel figure:nth-child(7) {
+        transform: rotateY(360deg) translateZ(300px);
+    }
+
+    .slideshow {
+        position: absolute;
+        box-shadow: 0px 0pz 20px 0px #000;
+        border-radius: 5px;
+    }
+
+    .content-carrousel img {
+        image-rendering: auto;
+        transition: all 300ms;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-carrousel img:hover {
+        transform: scale(1.2);
+        transition: all 300ms;
+    }
+
+    @keyframes rotar {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+@media screen and (max-width: 1200px){
+    .block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .left{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+    .right{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+img {
+    margin-top: 20px;
+    width: 70vw;
+    border-radius: 5px;
+}
+button {
+    margin-top: 10px;
+    background-color: #1e6dbc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 100px;
+}
+.block-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 60px;  
+    border: solid 0.5px transparent ;
+    border-radius: 5px;
+    height: 250px;
+    width: 50vw;
+    background-color: transparent;
+}
+.block-optim{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.firstLign{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+.firstLign p {
+    width: 60vw;
+    margin: 20px;
+    font-size: 12px;
+}
+.secondLign p {
+    width: 60vw;
+    margin: 20px;
+    font-size: 12px;
+}
+.secondLign{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+
+/* palyers slides */
+    .slideshow {
+        height: 300px;
+        width: 400px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .content {
+        margin: auto;
+        width: 170px;
+        perspective: 3000px;
+        padding-top: 80px;
+    }
+
+    .content-carrousel {
+        width: 80%;
+        float: right;
+        animation: rotar 15s infinite linear;
+        transform-style: preserve-3d;
+    }
+
+    .content-carrousel:hover {
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+
+    .content-carrousel figure {
+        width: 80%;
+        height: 100px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .content-carrousel figure:nth-child(1) {
+        transform: rotateY(0deg) translateZ(200px);
+    }
+
+    .content-carrousel figure:nth-child(2) {
+        transform: rotateY(60deg) translateZ(200px);
+    }
+
+    .content-carrousel figure:nth-child(3) {
+        transform: rotateY(120deg) translateZ(200px);
+    }
+
+    .content-carrousel figure:nth-child(4) {
+        transform: rotateY(180deg) translateZ(200px);
+    }
+
+    .content-carrousel figure:nth-child(5) {
+        transform: rotateY(240deg) translateZ(200px);
+    }
+
+    .content-carrousel figure:nth-child(6) {
+        transform: rotateY(300deg) translateZ(200px);
+    }
+
+    .content-carrousel figure:nth-child(7) {
+        transform: rotateY(360deg) translateZ(200px);
+    }
+
+    .slideshow {
+        position: absolute;
+        box-shadow: 0px 0pz 20px 0px #000;
+        border-radius: 5px;
+    }
+
+    .content-carrousel img {
+        image-rendering: auto;
+        transition: all 300ms;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-carrousel img:hover {
+        transform: scale(1.2);
+        transition: all 300ms;
+    }
+
+    @keyframes rotar {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+}
+.block-buymeacoffee{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgb(238, 214, 76);
+                        padding: 10px;
+                        border-radius: 5px;
+                        width: 50vw;
+                        font-size: 16px;
+                        font-family: American Typewriter, serif	;
+    
+                    }
+                    .coffee-text{
+                        
+                        color: black;
+                    }
+                    .buyCoffeeLink{
+                        background-color: rgb(224, 192, 8);
+                        border-radius: 5px;
+                        padding: 5px;
+                        font-size: 22px;
+                        color: #000;
+                        font-family: Chalkduster, fantasy	;
+                    }

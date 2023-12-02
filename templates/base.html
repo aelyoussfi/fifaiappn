@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'logo.png' %}" type="image/icon type">
+    <title>
+        ⚽️ fifai.app
+    </title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="mylogo">
+                
+                    <a href={% url 'home' %} ">
+                        <img src="{% static 'logo.png' %}" alt="logo">
+                    </a>
+            </div>
+            
+            {% if user.is_authenticated %}
+            <div class="dropdown"> 
+                <div class="auth-button">
+                    <p>Hello {{user.username}}</p>
+                </div>               
+                <div class="dropdown-content">
+                    
+                    <div class="auth-button">
+                        <a href={% url 'logout' %} style="color: white;">
+                            Logout
+                        </a>
+                    </div>
+                    <div class="auth-button">
+                        <a href={% url 'password_change' %} style="color: white;">
+                            Change Password 
+                        </a>
+                    </div>
+                </div>
+            </div>
+                
+                
+            {% endif %}
+            
+        </div>
+        
+    </header>
+    <div class="app-corp">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <div class="footer-container">
+            <a href="{% url 'about' %}">
+                <p>Terms & Privacy</p>
+            </a>
+            <p>created by: 
+                <a href="https://twitter.com/azelyous" target="_blank">@azelyous</a>
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

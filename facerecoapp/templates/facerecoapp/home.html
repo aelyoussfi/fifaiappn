@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+<link rel="stylesheet" href="{% static 'facerecoapp/css/home.css' %}">
+
+<div class="main-body">
+
+    <div class="main-content">
+        <div class="block">
+            <div class="block-buymeacoffee">
+                <style>
+                    .block-buymeacoffee{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgb(225, 178, 227);
+                        padding: 10px;
+                        border-radius: 5px;
+                        width: 50vw;
+                        font-size: 16px;
+                        font-family: American Typewriter, serif	;
+    
+                    }
+                    .coffee-text{
+                        
+                        color: black;
+                    }
+                    .buyCoffeeLink{
+                        background-color: rgb(224, 192, 8);
+                        border-radius: 5px;
+                        padding: 5px;
+                        font-size: 22px;
+                        color: #000;
+                        font-family: Chalkduster, fantasy	;
+                    }
+                </style>
+                <div class="buyCoffeeLink">
+                    <a href="https://www.buymeacoffee.com/fifaimazigh" target="_blank" >Buy Me a coffee ☕️ </a>
+                </div>
+                <p class="coffee-text">
+                    This app is free, but requires servers fees, if you can buy a coffee for us you're welcome 😁
+                </p>
+                
+            </div>
+            
+        </div>
+        {% if not user.is_authenticated %}
+      
+        <div class="block-button">
+            <div class="text">
+                <p>Join us to try our app </p>
+            </div>
+            <div class="buttons">
+                <div class="button-authentication-links">                        
+                    <a href="{% url 'signup' %}">
+                        <button>Sign Up</button>
+                    </a>
+                </div>
+                <div class="button-authentication-links">                        
+                    <a href="{% url 'login' %}">
+                        <button>Sign In</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="block-button">
+                <div class="button-authentication-links">                        
+                    <a href="{% url 'predict' %}">
+                        <button style="width: 200px;">Do Predictions</button>
+                    </a>
+                </div>
+        </div>
+        {% endif %}
+        <div class="block">
+            <section class="slideshow">
+                <div class="content">
+                    <div class="content-carrousel">
+                        <figure class="shadow">
+                            <img src="{% static 'joueurs/Bukayo Saka.png' %}">
+                                                        </figure>
+                                                        <figure class="shadow">
+                            <img src="{% static 'joueurs/Erling Haaland.jpeg' %}">
+                                                        </figure>
+                                                        <figure class="shadow">
+                            <img src="{% static 'joueurs/Harry Kane.jpeg' %}">
+                                                        </figure>
+                                                        <figure class="shadow">
+                            <img src="{% static 'joueurs/Julian Alvarez.jpeg' %}">
+                                                        </figure>
+                                                        <figure class="shadow">
+                            <img src= "{% static 'joueurs/Robert Lewandowski.jpeg' %}">
+                                                        </figure>
+                                                        <figure class="shadow">
+                            <img src= "{% static 'joueurs/Yassine Bounou.png' %}">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="block">
+            <div class="left">
+               
+                
+            </div>
+            <div class="right">
+                <img src="{% static 'gif.gif'  %}">
+            </div>
+        </div>
+        
+        <div class="block">
+            
+            <div class="right">
+                <img src="{% static 'aischeme.png'  %}">
+            </div>
+        </div>
+        <div class="block">
+            
+            <div class="right">
+                <img src="{% static 'my-image.png'  %}">
+            </div>
+        </div>
+        
+        <div class="block-optim">
+            <div class="firstLign">
+                <p>
+                    Discover your football doppelganger with our innovative app and see just how much you resemble your favorite soccer superstar!
+                </p>
+                <p>
+                    The ultimate fan experience is here! Find out how close you are to your preferred football star in just a few clicks. Get ready for a game-changing revelation!
+                </p>
+                <p>
+                    Soccer meets science with our app – see the incredible results of your resemblance to your favorite footballer. Get started today and share your lookalike discovery with friends!
+                </p>
+            </div>
+            <div class="secondLign">
+                <p>
+                    Whether you're a die-hard fan or a casual supporter, our app lets you step into your player's shoes, literally. Try it out and discover your football twin now!
+                </p>
+                <p>
+                    Experience the thrill of finding out how much you resemble your football hero. Our app makes it fun and easy to discover your player lookalike.
+                </p>
+                <p>
+                    Get ready to be amazed as you reveal the uncanny resemblance you share with your preferred football legend. Try our app today and score your own lookalike goal!
+                </p>
+            </div>
+            
+            
+        </div>
+        <div class="buyCoffeeLink">
+            <a href="https://www.buymeacoffee.com/fifaimazigh" target="_blank" >Buy Me a coffee ☕️ </a>
+        </div>
+        <style>
+            .buyCoffeeLink{
+                display: flex;
+                justify-content: center;
+
+                background-color: rgb(224, 192, 8);
+                border-radius: 5px;
+                padding: 5px;
+                font-size: 14px;
+                color: #000;
+                font-family: Chalkduster, fantasy	;
+                width: auto;
+            }
+        </style>
+        {% if not user.is_authenticated %}
+        <div class="block-button">
+            <div class="text">
+                <p>Join us to try our app </p>
+            </div>
+            <div class="buttons">
+                <div class="button-authentication-links">                        
+                    <a href="{% url 'signup' %}">
+                        <button>Sign Up</button>
+                    </a>
+                </div>
+                <div class="button-authentication-links">                        
+                    <a href="{% url 'login' %}">
+                        <button>Sign In</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<script src="{% static 'facerecoapp/js/home.js' %}"></script> 
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<link rel="stylesheet" href="{% static 'facerecoapp/css/index.css' %}">
+
+
+
+
+    <div class="job-space" id="job-space">
+        <!-- <div class="disclaimer">
+            <p>
+                For the most accurate prediction, please take a well-lit and clear photo of your face.
+            </p>
+        </div> -->
+        
+        <div class="form-container">
+            <form id="upload-form" method="post" enctype="multipart/form-data" style="display: block;">
+                {% csrf_token %}
+                <div class="btns-container">
+                    
+                    <div class="form-group">
+                        <label for="{{ form.image.id_for_label }}"></label>
+                        <div class="file-upload">
+                            <input type="file" id="loaded-image" name="{{ form.image.name }}" accept="image/png, image/jpg, image/jpeg" onchange="displaySelectedImage()">
+                            <label for="{{ form.image.id_for_label }}">
+                                <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792">
+                                    <path d="M1344 1472q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm256 0q0-26-19-45t-45-19-45 19-19 45 
+                                    19 45 45 19 45-19 19-45zm128-224v320q0 40-28 68t-68 28h-1472q-40 0-68-28t-28-68v-320q0-40 28-68t68-28h427q21 56 
+                                    70.5 92t110.5 36h256q61 0 110.5-36t70.5-92h427q40 0 68 28t28 68zm-325-648q-17 40-59 40h-256v448q0 26-19 45t-45 
+                                    19h-256q-26 0-45-19t-19-45v-448h-256q-42 0-59-40-17-39 14-69l448-448q18-19 45-19t45 19l448 448q31 30 14 69z"/>
+                                </svg>
+                                                                
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+        
+        
+        <div class="output-container" id="output-container">
+            <div class="photos-container">
+                <div id="preview-section">
+                    <div id="photo-preview" class="photo-preview" style="display: none;">
+                        <img id="selected-image" src="#" alt="Selected Image">
+                    </div>
+                    <div class="button-js">
+                        <div class="btn-submit-predict" id="btn-submit-predict" >
+                            <button id="predict" type="button" onclick="myFunction()" style="display: none;">Predict</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="predict-section">
+                    <div id="photo-shaked" class="photo-shaked"></div>
+                    <!-- <div class="radar-container" id="radar-container"> -->
+                    </div>
+                </div>
+                
+            </div>
+            <div id="names">
+
+            </div>
+        </div>
+        <div class="button-js">
+            <div class="btn-submit-reset" id="btn-submit-reset" >
+                <a href="predict">
+                    <button id="reset" type="button" onclick="" style="display: none;">Try An Other Photo</button>
+                </a>
+            </div>
+            
+        </div>
+        <div id="popup-container" class="hidden">
+            <div id="popup">
+                <div id="content-popup">
+                    <h1>Hello, as desclaimer:</h1>
+                    <p>1. Please, use a photo with clear sight of your face for optimal results.</p>
+                    <p>2. We do not keep any results on our servers, please download the image to your local<br /> machine.
+                        You can find the button Download in the bottom of the page.
+                    </p>
+                </div>
+                 
+                <div class="btn-container">
+                    <button id="close-btn">Close</button>
+                    
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="block">
+            <div class="block-buymeacoffee">
+                <style>
+                    .block-buymeacoffee{
+                        margin-top: 40px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    #download-btn{
+                        margin-bottom:10px ;
+                    }
+                    .buyCoffeeLink{
+                        background-color: rgb(224, 192, 8);
+                        border-radius: 5px;
+                        padding: 5px;
+                        font-size: 22px;
+                        color: #000;
+                        font-family: Chalkduster, fantasy	;
+                    }
+                </style>
+                <button id="download-btn">Download</button>
+                <div class="buyCoffeeLink">
+                    <a href="https://www.buymeacoffee.com/fifaimazigh" target="_blank" >Buy Me a coffee ☕️ </a>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <script src="{% static 'facerecoapp/js/index.js' %}"></script> 
+{% endblock %}

@@ -1,0 +1,208 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:0;
+    margin:0;
+    background-color: 	#132043 !important;
+    font-family: Georgia, serif;   
+    }
+.mylogo img{
+    width: auto;
+    height: 50px;
+    }
+
+
+.login-btn button{
+
+color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: none;
+    padding: 10px 20px;
+    border:none;
+    /* background-color: #405d79; Set your desired color */
+
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 6s ease infinite;
+    background-size: 500% 100%;
+    /* Add any other desired styling */
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    font-size: 26px;
+    }
+
+    @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+    }    
+header{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    }
+.header-container{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    border-bottom: 2px solid #045; /* Set the border color and thickness */
+    margin-bottom: 30px; /* Center the line horizontally */
+    }
+
+footer{
+    bottom: 0px;
+    width: 100vw;
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    }
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50vw;
+    color: white;
+    margin-top: 100px;
+    }
+a {
+    text-decoration: none; /* no underline */
+    color: inherit;
+    }
+.app-corp{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #072541;
+    width: 90%;
+    border-radius: 7px;
+    padding: 20px;
+    }
+@media screen and (max-width: 1200px){
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:0;
+    margin:0;
+    background-color: 	#132043 !important;
+    font-family: Georgia, serif;   
+}
+.app-corp{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    bottom: 0px;
+    width: 100vw;
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;       
+    color: white;
+    justify-content: space-between;
+    width: 50vw;
+    bottom: 0px;
+    margin-top: 100px;
+}
+@media screen and (max-width: 458px){
+body{
+    font-size: 10px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:0;
+    margin:0;
+    background-color: 	#132043 !important;
+    font-family: Georgia, serif;   
+}
+.app-corp{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    bottom: 0px;
+    width: 100vw;
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;       
+    color: white;
+    justify-content: space-between;
+    width: 50vw;
+    bottom: 0px;
+    margin-top: 100px;
+}
+}
+
+}
+.dropdown{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30%;
+
+    }
+.dropdown {
+    position: relative;
+    }
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(219, 220, 223, 0.5);
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: auto;
+    border-radius: 5px;
+    }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    }
+.dropdown-content{
+    display: flex;
+    flex-direction: column;
+    }
+.auth-button{
+    margin-right: 10px;
+    }
+.auth-button{
+    margin-bottom: 5px;
+    color: #e7ecf1;
+    font-size: 18px;
+    font-weight: 700;
+    }

@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+        
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    
+    }
+   
+    .password-infowindow .popup-container #popup {
+        border-radius: 15px;
+        text-align: left;
+        background-color: rgb(168, 161, 153);
+        padding: 10px;
+        font-size: 10px;
+    }
+    .password-infowindow .popup-container #popup .list{
+        text-align: left;
+    }
+    .password-infowindow .popup-container .custom-input{
+        margin-top: 10px;
+        width: 50%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .custom-form-change-password{
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+        text-align: center;
+        justify-content: center;
+    }
+    .errors-signup-container{
+        border: None ;
+        border-radius: 10px;
+        background-color: None;
+        color: red;
+        width: 400px;
+        text-align: left;
+    }
+    /* Style the input fields */
+    .custom-input{
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .profile_photo-username{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Style the input placeholders */
+    .custom-input::placeholder {
+        color: #999;
+        font-style: italic;
+    }
+
+    /* Hide input placeholders on focus */
+    .custom-input:focus::placeholder {
+        color: transparent;
+    }
+
+    /* Highlight input fields on focus */
+    .custom-input:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    /* Style the submit button */
+    button[type="submit"] {
+        margin-top: 10px;
+        background-color:  #1e6dbc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 70%;
+    }
+    button {
+        margin-top: 10px;
+        background-color: #1e6dbc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .custom-form-change-password{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div class="main">
+    <form method="post" class="custom-form-change-password">
+        {% csrf_token %}
+        <!-- username -->
+        <input type="{{ form.username.field.widget.input_type }}"
+               id="{{ form.username.id_for_label }}"
+               name="{{ form.username.html_name }}"
+               class="custom-input"
+               placeholder="username">
+    
+        <!-- Email Address -->
+        <input type="{{ form.email.field.widget.input_type }}"
+               id="{{ form.email.id_for_label }}"
+               name="{{ form.email.html_name }}"
+               class="custom-input"
+               placeholder="Email">
+        <input type="{{ form.password1.field.widget.input_type }}"
+               id="{{ form.password1.id_for_label }}"
+               name="{{ form.password1.html_name }}"
+               class="custom-input"
+               placeholder="Password">
+    
+        <!-- Password -->
+        <div class="password-infowindow"> 
+            <div id="popup-container" class="popup-container">
+                
+                <div id="popup">
+                    Your password:
+                    <lu class="list">
+                        <li>can’t be too similar to your other personal information.
+                        <li>can’t be a commonly used password.</li>
+                        <li>must contain at least 8 characters.</li>
+                        <li>password can’t be entirely numeric.</li>
+                    </lu>
+                </div>
+            </div>
+        </div>
+       
+        
+        
+        <!-- Confirm Password -->
+        <input type="{{ form.password2.field.widget.input_type }}"
+               id="{{ form.password2.id_for_label }}"
+               name="{{ form.password2.html_name }}"
+               class="custom-input"
+               placeholder="Confirm Password">
+        
+        <!-- Other Fields... -->
+        
+        <button type="submit">Sign Up</button>
+    </form>
+    <div class="errors-signup-container">
+        <p class="signup-errors">
+            {% if message %}
+                {% for field_errors in form.errors.values %}
+                <ul style="list-style: none;">
+                    {% for error in field_errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            {% endif %}
+        </p>
+    </div>
+    <p class="subscribe-text" style="color: white;">
+        You already have an account have an account?
+    </p>
+    <div class="button-authentication-links">                        
+        <a href="{% url 'login' %}">
+            <button>Login</button>
+
+        </a>
+    </div>
+</div>
+
+{% endblock content %}

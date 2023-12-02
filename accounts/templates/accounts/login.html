@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    
+    }
+    .firstBloc{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        background-color:None;
+        padding-top: 10px;
+    }
+    .firstBloc .intro-text{
+        display: flex;
+        width: 50%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .firstBloc .intro-text h1{
+        font-size: 50px;
+        font-family: Wicked Mouse;
+        background-color: None;
+        text-align: center;
+        color:black;
+     }
+    .firstBloc .lg-links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    .login-text{
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: white;
+    }
+    .subscribe-text{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+    .secondBlock {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-height: 400px;
+        align-items: center;
+        background-color:rgb(207, 215, 221);
+
+    }
+    .secondBlock .secondBlock-left {
+        width: 50%;
+        margin: 3%;
+        margin-left: 10%;
+    }
+    .secondBlock .secondBlock-right {
+        width: 50%;
+
+    }
+    /* Style the input fields */
+    .custom-input{
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .profile_photo-username{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Style the input placeholders */
+    .custom-input::placeholder {
+        color: #999;
+        font-style: italic;
+    }
+
+    /* Hide input placeholders on focus */
+    .custom-input:focus::placeholder {
+        color: transparent;
+    }
+
+    /* Highlight input fields on focus */
+    .custom-input:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    /* Style the submit button */
+    button[type="submit"] {
+        margin-top: 10px;
+        background-color: #1e6dbc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button {
+        margin-top: 10px;
+        background-color: #1e6dbc;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .custom-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .error {
+    color: red;
+    /* Other styling as needed */
+    width: 250px;
+    }
+
+</style>
+    <div class="main">
+        <div class="firstBloc">
+            
+            <div class="lg-links">
+                <p class="login-text">
+                    
+                    Do you have an account? login
+                </p>
+                <form method="post" class="custom-form">
+                    <div class="form-group">
+                        <input type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.name }}" class="custom-input"  placeholder="{{ form.username.label }}">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="{{ form.password.id_for_label }}" name="{{ form.password.name }}" class="custom-input" placeholder="{{ form.password.label }}">
+                    </div>
+                    {% csrf_token %}
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="error">
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">
+                             {% for error in form.non_field_errors %}
+                                  <p>{{ error }}</p>
+                             {% endfor %}
+                           </div>
+                      {% endif %}                
+                    </div>
+                        <!-- Your login form here -->
+
+                <p class="subscribe-text" style="color: white;">
+                    Don't have an account?
+                </p>
+                <div class="button-authentication-links">                        
+                            <a href="{% url 'signup' %}">
+                                <button>Sign-up</button>
+                            </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
